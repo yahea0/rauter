@@ -1,0 +1,16 @@
+# بيئة العمل الخاصة
+config.json
+netguard.jsonl
+bin/
+node_modules/
+web/dist/
+
+# مخرجات بايثون
+__pycache__/
+*.pyc
+.venv/
+
+# أنظمة
+.DS_Store
+Thumbs.db
+*.log
