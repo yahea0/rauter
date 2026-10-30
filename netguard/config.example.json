@@ -1,0 +1,54 @@
+{
+  "interval_seconds": 3,
+  "probes": {
+    "icmp_targets": ["8.8.8.8", "1.1.1.1"],
+    "http_target": "https://www.gstatic.com/generate_204",
+    "dns_target": "www.gstatic.com",
+    "timeout_seconds": 3
+  },
+  "router": {
+    "host": "192.168.0.1",
+    "username": "admin",
+    "password": "ضع_كلمة_سر_الراوتر_هنا",
+    "mode": "hnap",
+    "hnap_reconnect_action": "ReconnectWAN",
+    "basic_reconnect_path": "/reconnect.cgi",
+    "basic_reboot_path": "/reboot.cgi",
+    "form_login_path": "/login.cgi",
+    "form_user_field": "username",
+    "form_pass_field": "password",
+    "form_reconnect_path": "/reconnect.cgi",
+    "form_reboot_path": "/reboot.cgi",
+    "custom": {
+      "login_url": "",
+      "login_method": "POST",
+      "login_body": "",
+      "action_url": "",
+      "action_method": "POST",
+      "action_body": ""
+    }
+  },
+  "action": {
+    "down_threshold": 3,
+    "level1": "reconnect",
+    "level2": "reboot",
+    "cooldown_seconds": 120,
+    "max_per_hour": 6,
+    "reconnect_enabled": true,
+    "reboot_enabled": true,
+    "preemptive_enabled": false
+  },
+  "ai": {
+    "enabled": true,
+    "url": "http://127.0.0.1:8090",
+    "risk_threshold": 0.72
+  },
+  "api": {
+    "listen": ":8080",
+    "token": ""
+  },
+  "history": {
+    "file": "netguard.jsonl",
+    "samples": 1800
+  }
+}
