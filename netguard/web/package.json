@@ -1,0 +1,16 @@
+{
+  "name": "netguard-web",
+  "private": true,
+  "version": "1.0.0",
+  "description": "لوحة تحكم NetGuard — حارس الشبكة",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "typescript": "^5.5.4",
+    "vite": "^5.4.8"
+  }
+}
