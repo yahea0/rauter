@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NetGuard — حارس الشبكة</title>
+    <link rel="icon" href="data:," />
+  </head>
+  <body>
+    <header>
+      <div class="brand">
+        <span class="logo"></span>
+        <h1>NetGuard <small>حارس الشبكة</small></h1>
+      </div>
+      <span id="status-pill" class="pill ok">جاري الفحص…</span>
+    </header>
+
+    <main>
+      <section class="cards">
+        <div class="card">
+          <span class="label">البينغ الحالي</span>
+          <strong id="v-ping">—</strong>
+        </div>
+        <div class="card">
+          <span class="label">متوسط الدقيقة</span>
+          <strong id="v-avg">—</strong>
+        </div>
+        <div class="card">
+          <span class="label">فقدان الحزم</span>
+          <strong id="v-loss">—</strong>
+        </div>
+        <div class="card">
+          <span class="label">استمرارية الاتصال</span>
+          <strong id="v-uptime">—</strong>
+        </div>
+        <div class="card">
+          <span class="label">عمليات الإنقاذ اليوم</span>
+          <strong id="v-restarts">0</strong>
+        </div>
+      </section>
+
+      <section class="panel">
+        <div class="panel-head">
+          <h2>زمن الاستجابة — آخر 15 دقيقة</h2>
+          <span id="v-ai" class="risk">—</span>
+        </div>
+        <canvas id="ping-chart"></canvas>
+      </section>
+
+      <section class="panel">
+        <div class="panel-head">
+          <h2>التحكم اليدوي</h2>
+          <span id="v-router" class="muted">—</span>
+        </div>
+        <div class="actions">
+          <button id="btn-reconnect" class="btn primary">إعادة تشغيل الشبكة</button>
+          <button id="btn-reboot" class="btn danger">إعادة تشغيل الراوتر</button>
+        </div>
+      </section>
+
+      <section class="panel">
+        <div class="panel-head">
+          <h2>سجل الأحداث</h2>
+        </div>
+        <table class="log">
+          <thead>
+            <tr><th>الوقت</th><th>الحدث</th></tr>
+          </thead>
+          <tbody id="log-body"></tbody>
+        </table>
+      </section>
+    </main>
+
+    <div id="toast" class="toast"></div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
