@@ -1,0 +1,3 @@
+module github.com/yahea0/netguard/agent
+
+go 1.22
