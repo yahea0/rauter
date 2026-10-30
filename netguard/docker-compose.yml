@@ -1,0 +1,23 @@
+services:
+  ai:
+    build:
+      context: .
+      dockerfile: Dockerfile.ai
+    restart: unless-stopped
+    expose:
+      - "8090"
+
+  agent:
+    build:
+      context: .
+      dockerfile: Dockerfile.agent
+    restart: unless-stopped
+    # network_mode host ضروري لكي يصل الوكيل إلى الراوتر 192.168.0.1 (لينكس)
+    network_mode: host
+    depends_on:
+      - ai
+    environment:
+      - NETGUARD_AI_URL=http://127.0.0.1:8090
+      - NETGUARD_ROUTER_PASSWORD=${NETGUARD_ROUTER_PASSWORD:-}
+    volumes:
+      - ./config.json:/config.json:ro
