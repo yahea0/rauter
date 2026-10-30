@@ -1,0 +1,3 @@
+# NetGuard AI — متطلبات خدمة التنبؤ
+fastapi>=0.110
+uvicorn>=0.29
